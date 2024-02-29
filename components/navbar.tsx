@@ -7,7 +7,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Features", href: "/#features" },
+  { name: "Home", href: "/" },
   { name: "Testimonials", href: "/#testimonials" },
   { name: "Pricing", href: "/#pricing" },
 ];
@@ -23,7 +23,8 @@ export default function Navbar() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5 text-white">
-            <span className="sr-only text-white">Your Company</span>
+            <span className="sr-only font-extrabold"></span>
+            <h1>ECOMMERCE</h1>
            {/* <Logo width="200" /> */}
           </a>
         </div>

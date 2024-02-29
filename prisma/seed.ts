@@ -31,6 +31,7 @@ const products = [
 
 const load = async () => {
   try {
+
     await prisma.product.deleteMany();
     console.log("Deleted records in product table");
 
@@ -38,8 +39,9 @@ const load = async () => {
     console.log("reset product auto increment to 1");
 
     await prisma.product.createMany({
-      data: products,
+      data: products, // inserisco i dati const prod
     });
+
     console.log("Added product data");
   } catch (e) {
     console.error(e);
