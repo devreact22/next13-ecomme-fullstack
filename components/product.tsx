@@ -1,21 +1,36 @@
 "use client";
 
+import { Product as ProductType } from "@prisma/client";
+import { Container } from "@/components/container";
+
 interface ProductProps {
-    name:string
+  // import già i tipi dal DB (schema.prisma)
+  product: ProductType;
 }
 
-
-export default function Product ({name} : ProductProps) {
-    return (
-        <div>
-            {name}
-        </div>
-    )
+export default function Product({ product }: ProductProps) {
+  return (
+    <>
+  
+    <div className="text-left px-6 py-4 transition-colors duration-200 transform rounded-lg ">
+      <p className="text-lg font-medium text-gray-800 ">{product.name}</p>
+      <h4 className="mt-2 font-bold text-gray-800 ">
+        € {product.price.toString()}
+      </h4>
+      <p className="text-small font-semibold text-gray-800 ">
+        {product.description}
+      </p>
+      <div className="gap-4 mb-4 ">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Button
+        </button>
+      </div>
+    </div>
+   
+    </>
+  );
+  
 }
-
-// interface ProductProps {
-//   name : string
-// }
 
 // export default function Product({ product }: ProductProps) {
 //   const { name, description, price, stripePriceId } = product;
