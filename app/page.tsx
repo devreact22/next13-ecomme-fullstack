@@ -5,7 +5,7 @@ import { Pricing } from "@/components/pricing";
 
 export default async function Home() {
   const products = await prisma.product.findMany() 
-  //console.log(products)
+  console.log(products)
 
   return (
     <main className="flex flex-col items-center justify-between text-black">
